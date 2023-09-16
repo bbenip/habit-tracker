@@ -1,0 +1,12 @@
+{
+  "author": "bbenip",
+  "description": "Track behaviors, see patterns, build habits!",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "habits",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
