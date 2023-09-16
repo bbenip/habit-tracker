@@ -3,8 +3,8 @@
   "description": "Track behaviors, see patterns, build habits!",
   "keywords": [],
   "license": "ISC",
-  "main": "index.js",
   "name": "habits",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
