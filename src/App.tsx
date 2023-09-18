@@ -1,7 +1,9 @@
+import { HabitList } from "./HabitList";
+
 import "./App.css";
 
-export const App = () => {
-  return (
-    <h1>Hi</h1>
-  );
-};
+export const App = () => (
+  <>
+    <HabitList />
+  </>
+);
