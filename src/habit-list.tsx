@@ -30,7 +30,7 @@ export const HabitList = () => {
     setIsAddNewHabit(false);
 
     setNewHabit(createNewHabit());
-  }, [createNewHabit, newHabit]);
+  }, [newHabit]);
 
   const habitTags = useMemo(() => (
     habits.map(({ id, isCompleted, name }) => (
