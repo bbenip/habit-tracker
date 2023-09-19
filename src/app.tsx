@@ -1,4 +1,4 @@
-import { HabitList } from "./HabitList";
+import { HabitList } from "./habit-list";
 
 export const App = () => (
   <>
