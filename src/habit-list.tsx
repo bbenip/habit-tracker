@@ -1,5 +1,7 @@
 import { FormEvent, useCallback, useMemo, useState } from 'react';
 
+import styles from './habit-list.module.css';
+
 type Habit = {
   id: string;
   isCompleted: boolean;
@@ -86,7 +88,7 @@ export const HabitList = () => {
       ) : (
         <button onClick={() => setIsAddNewHabit(true)}>Add habit</button>
       )}
-      <ul>{habitTags}</ul>
+      <ul className={styles.list}>{habitTags}</ul>
     </>
   );
 }
