@@ -88,7 +88,7 @@ export const HabitList = () => {
       ) : (
         <button onClick={() => setIsAddNewHabit(true)}>Add habit</button>
       )}
-      <ul className={styles.list}>{habitTags}</ul>
+      <ol className={styles.habitList}>{habitTags}</ol>
     </>
   );
 }
