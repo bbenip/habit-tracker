@@ -17,8 +17,23 @@ const createNewHabit = (): Habit => ({
 export const HabitList = () => {
   const [habits, setHabits] = useState<Habit[]>([]);
   const [isAddNewHabit, setIsAddNewHabit] = useState(false);
-
   const [newHabit, setNewHabit] = useState<Habit>(createNewHabit());
+
+  const setHabitIsCompleted = useCallback(
+    (habitId: string, isCompleted: boolean) => {
+      setHabits((currentHabits) => {
+        const newHabits = [...currentHabits];
+        const habitToModify = newHabits.find(
+          ({ id }) => id === habitId
+        )!;
+
+        habitToModify.isCompleted = isCompleted;
+
+        return newHabits;
+      });
+    },
+    []
+  );
 
   const setNewHabitName = useCallback((name: string) => {
     setNewHabit((currentNewHabit) => ({ ...currentNewHabit, name }));
@@ -35,34 +50,24 @@ export const HabitList = () => {
   const habitTags = useMemo(() => (
     habits.map(({ id, isCompleted, name }) => (
       <li key={id}>
-        <input
-          type="checkbox"
-          id={id}
-          name={name}
-          checked={isCompleted}
-          onChange={(e) => setHabits((currentHabits) => {
-            const newHabits = [...currentHabits];
-            const habitToModify = newHabits.find(
-              ({ id: habitId }) => id === habitId
-            )!;
-
-            habitToModify.isCompleted = e.target.checked;
-
-            return newHabits;
-          })}
-        />
-        {isCompleted ? (
-          <del><label htmlFor={id}>{name}</label></del>
-        ) : (
-          <label htmlFor={id}>{name}</label>
-        )}
+        <label className={styles.habit}>
+          <input
+            checked={isCompleted}
+            className={styles.habitCheckbox}
+            id={id}
+            name={name}
+            onChange={(e) => setHabitIsCompleted(id, e.target.checked)}
+            type="checkbox"
+          />
+          {name}
+        </label>
       </li>
     ))
-  ), [habits]);
+  ), [habits, setHabitIsCompleted]);
 
   return (
     <>
-      <h1>Habits</h1>
+      <ul className={styles.habitList}>{habitTags}</ul>
       {isAddNewHabit ? (
         <>
           <form onSubmit={handleSubmit}>
@@ -88,7 +93,6 @@ export const HabitList = () => {
       ) : (
         <button onClick={() => setIsAddNewHabit(true)}>Add habit</button>
       )}
-      <ol className={styles.habitList}>{habitTags}</ol>
     </>
   );
 }

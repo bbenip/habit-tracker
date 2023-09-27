@@ -1,3 +1,39 @@
+.habitCheckbox {
+  appearance: none;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  color: currentColor;
+  display: grid;
+  font: inherit;
+  height: 1.5em;
+  margin: 0;
+  place-content: center;
+  width: 1.5em;
+}
+
+.habitCheckbox::before {
+  box-shadow: inset 1em 1em black;
+  clip-path: polygon(35.5% 61%, 82.5% 2%, 99.5% 16%, 37.25% 93.5%, 0.75% 57.75%, 16.5% 42%);
+  content: "";
+  height: 1em;
+  transform: scale(0);
+  transition: all 50ms ease-in-out;
+  width: 1em;
+}
+
+.habitCheckbox:checked::before {
+  transform: scale(1);
+}
+
+.habit{
+  display: grid;
+  font-size: 1.25em;
+  gap: 2em;
+  grid-template-columns: 1.5em auto;
+  margin: 1em;
+}
+
 .habitList {
   list-style-type: none;
+  padding: 0;
 }
