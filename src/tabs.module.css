@@ -1,3 +1,39 @@
+.container {
+  max-width: 800px;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+.navigation {
+  padding: 2em 0;
+}
+
+.tab {
+  font-weight: 400;
+  font-size: 1.25em;
+  padding-right: 3em;
+  text-decoration: underline rgb(0, 0, 0, 0) solid 0.2rem;
+  text-underline-offset: 0.5em;
+  transition: all 150ms ease-in-out;
+}
+
+.tab.active {
+  font-weight: 600;
+  text-decoration-color: rgb(0, 0, 0, 1);
+}
+
+.tab:not(.active):hover {
+  font-weight: 400;
+  text-decoration-color: rgb(152, 152, 152, 1);
+}
+
+.tab button {
+  all: unset;
+}
+
 .tabList {
+  display: flex;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
