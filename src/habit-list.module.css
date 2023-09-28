@@ -17,7 +17,7 @@
   content: "";
   height: 0.7em;
   transform: scale(0);
-  transition: all 50ms ease-in-out;
+  transition: transform 50ms ease-in-out;
   width: 0.7em;
 }
 
@@ -25,13 +25,18 @@
   transform: scale(1);
 }
 
-.habit{
+.habit {
   align-items: center;
   display: grid;
   font-size: 1.25em;
   gap: 2em;
   grid-template-columns: 1em auto;
   margin: 1em;
+  user-select: none;
+}
+
+.habit:has(.habitCheckbox:checked) {
+  text-decoration: line-through rgb(0, 0, 0, 1) solid 0.1em;
 }
 
 .habitList {
