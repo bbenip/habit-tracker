@@ -68,6 +68,7 @@ export const HabitList = () => {
   return (
     <>
       <ul className={styles.habitList}>{habitTags}</ul>
+      {habitTags.length > 0 && <hr className={styles.horizontalRule} />}
       {isAddNewHabit ? (
         <>
           <form onSubmit={handleSubmit}>

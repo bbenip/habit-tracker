@@ -38,3 +38,9 @@
   list-style-type: none;
   padding: 0;
 }
+
+.horizontalRule {
+  border: none;
+  border-top: 1px solid rgb(128, 128, 128);
+  margin: 1em 0;
+}
