@@ -92,7 +92,12 @@ export const HabitList = () => {
           </button>
         </>
       ) : (
-        <button onClick={() => setIsAddNewHabit(true)}>Add habit</button>
+        <button
+          className={styles.addHabitButton}
+          onClick={() => setIsAddNewHabit(true)}
+        >
+          Add habit
+        </button>
       )}
     </>
   );
