@@ -30,6 +30,20 @@
   color: rgb(229, 205, 181);
 }
 
+.habit {
+  align-items: center;
+  display: grid;
+  font-size: 1.25em;
+  gap: 2em;
+  grid-template-columns: 1em auto;
+  margin: 1em;
+  user-select: none;
+}
+
+.habit:has(.habitCheckbox:checked) {
+  text-decoration: line-through rgb(0, 0, 0, 1) solid 0.1em;
+}
+
 .habitCheckbox {
   appearance: none;
   border: 0.15em solid currentColor;
@@ -57,27 +71,38 @@
   transform: scale(1);
 }
 
-.habit {
-  align-items: center;
-  display: grid;
-  font-size: 1.25em;
-  gap: 2em;
-  grid-template-columns: 1em auto;
-  margin: 1em;
-  user-select: none;
-}
-
-.habit:has(.habitCheckbox:checked) {
-  text-decoration: line-through rgb(0, 0, 0, 1) solid 0.1em;
-}
-
 .habitList {
   list-style-type: none;
   padding: 0;
+}
+
+.habitName {
+  overflow-wrap: break-word;
 }
 
 .horizontalRule {
   border: none;
   border-top: 1px solid rgb(128, 128, 128);
   margin: 1em 0;
+}
+
+.newHabitButtons {
+  display: flex;
+  gap: 0.25em;
+  justify-content: flex-end;
+}
+
+.newHabitForm {
+  display: grid;
+  gap: 1em;
+}
+
+.newHabitTextInput {
+  all: unset;
+  background-color: rgb(245, 235, 225);
+  border: 0.1em solid black;
+  border-radius: 0.25em;
+  font-size: 1.25em;
+  height: 2em;
+  padding-left: 1em;
 }

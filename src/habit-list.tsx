@@ -59,7 +59,7 @@ export const HabitList = () => {
             onChange={(e) => setHabitIsCompleted(id, e.target.checked)}
             type="checkbox"
           />
-          {name}
+          <div className={styles.habitName}>{name}</div>
         </label>
       </li>
     ))
@@ -71,25 +71,30 @@ export const HabitList = () => {
       {habitTags.length > 0 && <hr className={styles.horizontalRule} />}
       {isAddNewHabit ? (
         <>
-          <form onSubmit={handleSubmit}>
+          <form className={styles.newHabitForm} onSubmit={handleSubmit}>
             <input
-              type="text"
-              id="habit"
-              required
-              maxLength={50}
-              value={newHabit.name}
-              onChange={(e) => setNewHabitName(e.target.value)}
               autoFocus
+              className={styles.newHabitTextInput}
+              id="habit"
+              maxLength={100}
+              onChange={(e) => setNewHabitName(e.target.value)}
+              placeholder="Habit name"
+              type="text"
+              value={newHabit.name}
+              required
             />
-            <button type="submit">Submit</button>
-          </form>
 
-          <button
-            type="button"
-            onClick={() => setIsAddNewHabit(false)}
-          >
-            Cancel
-          </button>
+            <div className={styles.newHabitButtons}>
+              <button
+                type="button"
+                onClick={() => setIsAddNewHabit(false)}
+              >
+                Cancel
+              </button>
+
+              <button type="submit">Submit</button>
+            </div>
+          </form>
         </>
       ) : (
         <button
