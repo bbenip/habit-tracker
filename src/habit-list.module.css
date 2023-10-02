@@ -43,14 +43,27 @@
   filter: brightness(0.9);
 }
 
+.deleteIcon {
+  fill: none;
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1em;
+  visibility: hidden;
+}
+
 .habit {
   align-items: center;
   display: grid;
   font-size: 1.25em;
   gap: 2em;
-  grid-template-columns: 1em auto;
+  grid-template-columns: 1em auto 1em;
   margin: 1em;
   user-select: none;
+}
+
+.habit:hover .deleteIcon {
+  visibility: visible;
 }
 
 .habit:has(.habitCheckbox:checked) {
@@ -110,6 +123,15 @@
   gap: 1em;
 }
 
+.newHabitForm:invalid .newHabitSubmitButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.newHabitForm:valid .newHabitSubmitButton:hover {
+  filter: brightness(0.9);
+}
+
 .newHabitSubmitButton {
   all: unset;
   background-color: rgb(230, 170, 110);
@@ -118,15 +140,6 @@
   font-size: 1em;
   font-weight: 500;
   padding: 0.5em;
-}
-
-.newHabitForm:invalid .newHabitSubmitButton {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.newHabitForm:valid .newHabitSubmitButton:hover {
-  filter: brightness(0.9);
 }
 
 .newHabitTextInput {
