@@ -86,13 +86,19 @@ export const HabitList = () => {
 
             <div className={styles.newHabitButtons}>
               <button
-                type="button"
+                className={styles.cancelButton}
                 onClick={() => setIsAddNewHabit(false)}
+                type="button"
               >
                 Cancel
               </button>
 
-              <button type="submit">Submit</button>
+              <button
+                className={styles.newHabitSubmitButton}
+                type="submit"
+              >
+                Add habit
+              </button>
             </div>
           </form>
         </>

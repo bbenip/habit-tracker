@@ -29,6 +29,20 @@
   color: rgb(229, 205, 181);
 }
 
+.cancelButton {
+  all: unset;
+  background-color: rgb(215, 215, 215);
+  border: solid 0.1em black;
+  border-radius: 0.25em;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.5em;
+}
+
+.cancelButton:hover {
+  filter: brightness(0.9);
+}
+
 .habit {
   align-items: center;
   display: grid;
@@ -94,6 +108,25 @@
 .newHabitForm {
   display: grid;
   gap: 1em;
+}
+
+.newHabitSubmitButton {
+  all: unset;
+  background-color: rgb(230, 170, 110);
+  border: solid 0.1em black;
+  border-radius: 0.25em;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.5em;
+}
+
+.newHabitForm:invalid .newHabitSubmitButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.newHabitForm:valid .newHabitSubmitButton:hover {
+  filter: brightness(0.9);
 }
 
 .newHabitTextInput {
